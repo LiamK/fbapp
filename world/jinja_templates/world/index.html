@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+GIS Demo
+{% endblock %}
+{% block content %}
+<div id="header">GIS Demo Page</div>
+<div id="container">
+<p>Welcome to the Numenet GIS Server demo page!<p>
+<table>
+{% for k,v in device.items() %}
+  {% if v == '' %}
+  {% set v = 'N/A' %}
+  {% endif %}
+  <tr><td>{{k}}</td><td>{{v}}</td></tr>
+{% endfor %}
+</td></tr>
+</table>
+<a href="/about.html">About this server</a>
+</div>
+{% endblock %}

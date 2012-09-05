@@ -1,0 +1,2 @@
+This is the project-level directory for *django* templates.
+You probably would be better off using jinja_templates.

@@ -1,0 +1,7 @@
+html { 
+	background: url(http://demo.numenet.com/static/world/images/sfbayareamap_desaturated.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

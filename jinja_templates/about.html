@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>About This Server</h3>
+<b>
+{{ device.brand_name }}
+</b>
+<p>This is an Amazon Web Services AMI that has been customized for Django and GIS.</p>
+<p>It's a great starting point if you are creating a backend for a mobile web application that requires geospatial capabilities.</p>
+<p>Take a snapshot and use it for your Geospatial projects!  It's all open source.
+<ul>
+<li><a href="http://www.ubuntu.com/">Ubuntu 12.04 (LTS) 64-bit</a> [ami-4438b474]
+<li><a href="http://aws.amazon.com/developertools/368">ec2-ami-tools</a> (Amazon EC2 AMI tools)
+<li><a href="http://aws.amazon.com/developertools/351">ec2-api-tools</a> (Amazon EC2 API tools)
+<li><a href="http://nginx.org">nginx</a> (Small, but very powerful and efficient web server and mail proxy)
+<li><a href="http://postgis.refractions.net/">postgis</a> (Geographic objects support for PostgreSQL -- common files)
+<li><a href="http://www.postgresql.org/">postgresql-9.1</a> (Object-relational SQL database, version 9.1 server)
+<li><a href="http://www.virtualenv.org/en/latest/index.html">python-virtualenv</a> (Python virtual environment creator)
+<li><a href="http://supervisord.org/">supervisor</a> (A system for controlling process state)
+<li><a href="http://www.doughellmann.com/projects/virtualenvwrapper/index.html">virtualenvwrapper</a> (Useful extensions to virtualenv)
+<li><a href="http://djangoproject.com">django 1.4</a> (Python web application framework)
+<li><a href="http://greenunicorn.org">green unicorn</a> (Python WSGI HTTP Server)
+<li><a href="http://jinja.pocoo.org/">jinja2</a> (Improved templating engine for Django)
+<li><a href="http://www.scientiamobile.com/">TeraWurfl</a> (PHP-based mobile browser identification server)
+<li><a href="http://www.mongodb.org/">mongodb-10gen</a> (An object/document-oriented database)
+<li><a href="http://php-fpm.org/">php5-fpm</a> (Server-side, HTML-embedded scripting language)
+<li><a href="http://pypi.python.org/pypi/django-debug-toolbar">django-debug-toolbar</a> (Django debugging utility)
+<li><a href="https://github.com/django-extensions/django-extensions">django-extensions</a> (Custom extensions for Django Framework)
+<li><a href="http://git-scm.com/">git-core</a> (Distributed version control system)
+</ul>
+
+<h4>Installation</h4>
+<p>Instantiate AMI</p>
+<p>Login</p>
+<p>User "demo"</p>
+
+
+<h4>Testing</h4>
+
+<h4>Configuration Notes</h4>
+<p>Nginx is used for serving static files, and as proxy to Django/GreenUnicorn.</p>
+<p>Supervisor monitors the Green Unicorn server that runs Django.</p>
+<p>TeraWurfl runs on port 8800, responding to mobile device identification requests.
+<ul>
+<li>You can access the TeraWurfl interface on that port with a web browser by opening that port in your security group.
+<li>TeraWurfl uses the Mongo database to store device profiles.
+<li>TeraWurfl is free to use for non-commercial purposes. 
+For commercial license, <a href="http://www.scientiamobile.com/">click here</a>.
+</ul>
+
+
+{% endblock %}
