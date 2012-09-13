@@ -6,7 +6,7 @@ PROJECT_DIR = os.path.dirname(__file__)
 TERAWURFL_HOST = 'localhost'
 TERAWURFL_PORT = '8800'
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = False
 
 ADMINS = (

@@ -1,13 +1,22 @@
+<!DOCTYPE HTML>
 <html>
   <head>
-    {% block title %}
-    <title>Base Demo Template</title>
-    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="user-scalable=no, width=device-width" />
-    {% if device and device.is_wireless_device %}
-        <link rel="stylesheet" href="{{staticfile('world/css/world_mobile.css')}}" type="text/css">
+    {% if true or device and device.is_wireless_device %}
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script>
+		$(document).bind("mobileinit", function(){
+		  $.extend(  $.mobile , {
+		    defaultPageTransition: 'slide'
+		  });
+		});
+        </script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <!--link rel="stylesheet" href="{{staticfile('world/css/world_mobile.css')}}" type="text/css"-->
         {% if device.device_os == 'Android' %}
-            <link rel="stylesheet" href="{{staticfile('world/css/android.css')}}" type="text/css">
+            <!--link rel="stylesheet" href="{{staticfile('world/css/android.css')}}" type="text/css"-->
         {% elif device.device_os == 'iPhone' %}
             <link rel="stylesheet" href="{{staticfile('world/css/iphone.css')}}" type="text/css">
         {% endif %}

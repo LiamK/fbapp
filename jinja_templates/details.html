@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Details{% endblock %}
+{% block content %}
+<div data-role="page">
+<div data-role="header">
+<a href="/overview.html" class="ui-btn-left" data-icon="arrow-l" data-rel="back">Back</a><h1>Server Details</h1>
+</div>
+<div data-role="content">
+<h3>List of packages installed and configured on server:</h3>
+<dl>
+<dt><a href="http://www.ubuntu.com/">Ubuntu 12.04 (LTS) 64-bit</a></dt><dd>Amazon ami-4438b474 server used as starting point</dd>
+<dt><a href="http://aws.amazon.com/developertools/368">ec2-ami-tools</a></dt><dd>Amazon EC2 AMI tools</dd>
+<dt><a href="http://aws.amazon.com/developertools/351">ec2-api-tools</a></dt><dd>Amazon EC2 API tools</dd>
+<dt><a href="http://nginx.org">nginx</a></dt><dd>Small, but very powerful and efficient web server</dd>
+<dt><a href="http://postgis.refractions.net/">postgis</a></dt><dd>Geographic objects support for PostgreSQL -- common files</dd>
+<dt><a href="http://www.postgresql.org/">postgresql-9.1</a></dt><dd>Object-relational SQL database, version 9.1 server</dd>
+<dt><a href="http://www.virtualenv.org/en/latest/index.html">python-virtualenv</a></dt><dd>Python virtual environment creator</dd>
+<dt><a href="http://supervisord.org/">supervisor</a></dt><dd>A system for controlling process state</dd>
+<dt><a href="http://www.doughellmann.com/projects/virtualenvwrapper/index.html">virtualenvwrapper</a></dt><dd>Useful extensions to virtualenv</dd>
+<dt><a href="http://djangoproject.com">django 1.4</a></dt><dd>Python web application framework</dd>
+<dt><a href="http://greenunicorn.org">green unicorn</a></dt><dd>Python WSGI HTTP Server</dd>
+<dt><a href="http://jinja.pocoo.org/">jinja2</a></dt><dd>Improved templating engine for Django</dd>
+<dt><a href="http://www.scientiamobile.com/">TeraWurfl</a></dt><dd>PHP-based mobile browser identification server</dd>
+<dt><a href="http://www.mongodb.org/">mongodb-10gen</a></dt><dd>An object/document-oriented database</dd>
+<dt><a href="http://php-fpm.org/">php5-fpm</a></dt><dd>Server-side, HTML-embedded scripting language</dd>
+<dt><a href="http://pypi.python.org/pypi/django-debug-toolbar">django-debug-toolbar</a></dt><dd>Django debugging utility</dd>
+<dt><a href="https://github.com/django-extensions/django-extensions">django-extensions</a></dt><dd>Custom extensions for Django Framework</dd>
+<dt><a href="http://git-scm.com/">git-core</a></dt><dd>Distributed version control system</dd>
+</dl>
+</div><!-- /content -->
+</div><!-- /page -->
+{% endblock %}

@@ -5,3 +5,13 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+div.left {
+  float: left;
+  width: 400px;
+}
+div.right {
+  //float: right;
+}
+#mapholder {
+  float: left;
+}
