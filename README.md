@@ -9,9 +9,11 @@ This is a simple Django demo that uses HTML5 and...
 For convenience, the mobile device parameters are made available in the
 Django RequestContext, so they can be easily accessed in the template.
 This allows the template designer to write something like
+
 > {% if device.is_wireless_device %}
 >   <p>I'm going mobile!</p>
 > {% endif %} 
+
 The specific device capabilities are easily configured in the context
 processor.  The remote ip address is added, as well.
 
@@ -30,5 +32,6 @@ MORE INFORMATION
 ----------------
 Go to [Numenet][1] for more information.
 
-[1]: http://www.numenet.com/	"Numenet, Inc."
-[2]: http://demo.numenet.com/	"The demo"
+[1]: http://www.numenet.com/	"Numenet"
+
+[2]: http://demo.numenet.com/	"running demo"
