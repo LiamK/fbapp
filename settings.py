@@ -3,6 +3,7 @@ import os
 
 PROJECT_DIR = os.path.dirname(__file__)
 
+# TeraWURFL is running locally on private port
 TERAWURFL_HOST = 'localhost'
 TERAWURFL_PORT = '8800'
 
@@ -17,13 +18,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'geodjango',             # Or path to database file if using sqlite3.
-        'USER': 'django',                # Not used with sqlite3.
-        'PASSWORD': 'ge0djang0',         # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'NAME': 'geodjango',
+        'USER': 'django', 
+        'PASSWORD': 'ge0djang0',
+        'HOST': '',  # Set to empty string for localhost.
+        'PORT': '',  # Set to empty string for default.
     }
 }
 

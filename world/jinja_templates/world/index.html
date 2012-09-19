@@ -1,67 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'world/base.html' %}
 {% block title %}Location{% endblock %}
 {% block content %}
 <div data-role="page">
 <div data-role="header">
 <a href="/overview.html" class="ui-btn-left" data-icon="arrow-l" data-rel="back">Back</a><h1>Location</h1>
 </div>
-<div data-role="content">
-<script src="http://www.google.com/jsapi"></script>
-<div id="mapholder" style="width:{{device.resolution_width - 20}}"></div>
-<table>
-<tr><td colspan="2"><span id="geoloc_error">Location</span></td></tr>
-<tr><td>latitude</td><td><span id="lat">--</span></td></tr>
-<tr><td>longitude</td><td><span id="lng">--</span></td></tr>
-</table>
-<script>
-var x=document.getElementById("geoloc_error");
-var xlat=document.getElementById("lat");
-var xlng=document.getElementById("lng");
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition,showError);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-function showPosition(position)
-  {
-  lat=position.coords.latitude;
-  lng=position.coords.longitude;
-  xlat.innerHTML=lat
-  xlng.innerHTML=lng
-  showMap(position)
-  }
-
-function showMap(position)
-  {
-  var latlon=position.coords.latitude+","+position.coords.longitude;
-  var img_url="http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size={{device.resolution_width}}x300&markers=color:blue%7Clabel:A%7C"+latlon+"&sensor=false";
-  document.getElementById("mapholder").innerHTML="<img src='"+img_url+"' />";
-  }
-
-function showError(error)
-  {
-  switch(error.code) 
-    {
-    case error.PERMISSION_DENIED:
-      x.innerHTML="User denied the request for Geolocation."
-      break;
-    case error.POSITION_UNAVAILABLE:
-      x.innerHTML="Location information is unavailable."
-      break;
-    case error.TIMEOUT:
-      x.innerHTML="The request to get user location timed out."
-      break;
-    case error.UNKNOWN_ERROR:
-      x.innerHTML="An unknown error occurred."
-      break;
-    }
-  }
-getLocation()
-</script>
+<div data-role="content" id="map_canvas">
 </div><!-- /content -->
 </div><!-- /page -->
-
 {% endblock %}
