@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Device{% endblock %}
+{% block content %}
+<div data-role="page">
+<div data-role="header">
+<a href="/overview.html" class="ui-btn-left" data-icon="arrow-l" data-rel="back">Back</a><h1>Device</h1>
+</div>
+<div data-role="content">
+<h3>Device capabilities determined by TeraWurfl.</h3>
+<table>
+{% for k,v in device.items() %}
+  {% if v == '' %}
+    {% set v = 'N/A' %}
+  {% endif %}
+  <tr><td>{{k}}</td><td>{{v}}</td></tr>
+{% endfor %}
+</div><!-- /content -->
+</div><!-- /page -->
+{% endblock %}

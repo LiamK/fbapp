@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Get It!{% endblock %}
+{% block content %}
+<div data-role="page">
+<div data-role="header">
+<a href="/overview.html" class="ui-btn-left" data-icon="arrow-l" data-rel="back">Back</a><h1>Get the AMI</h1>
+</div>
+<div data-role="content">
+<h3>Get this AMI!</h3>
+<p>This AMI is a good starting point for mobile web application backends.</p>
+<p>Here are some <a href="details.html">details</a> about the packages the server has installed.</p>
+<p>Just fill in the form and we'll send you the AMI id.  You can spin it up on Amazon, login, and be using it in just a few minutes.<p>
+<form action="#" method="post">
+<fieldset>
+<div data-role="fieldcontain" class="ui-field-contain ui-hide-label ui-br">
+<label for="email" class="ui-hidden-accessible">Email</label>
+<input type="text" name="email" id="getit" data-mini="true" placeholder="Email">
+</div>
+<div data-role="fieldcontain" class="ui-field-contain ui-hide-label ui-br">
+<label for="industry" class="ui-hidden-accessible">Industry</label>
+<select name="industry" class="select ui-select" data-mini="true" placeholder="Industry">
+<option value="Your Industry...">Select Your Industry...</option>
+<option value="Advertising">Advertising</option>
+<option value="Agriculture">Agriculture</option>
+<option value="Biomedical">Biomedical</option>
+<option value="Education">Education</option>
+<option value="Electronics">Electronics</option>
+<option value="Energy">Energy</option>
+<option value="Financial">Financial</option>
+<option value="IT and communications">IT and communications</option>
+<option value="Manufacturing">Manufacturing</option>
+<option value="Materials science">Materials science</option>
+<option value="Military">Military</option>
+<option value="Mobile">Mobile</option>
+<option value="Neuroscience">Neuroscience</option>
+<option value="Robotics">Robotics</option>
+Transport
+</select>
+</div>
+<div data-role="fieldcontain" class="ui-field-contain ui-hide-label ui-br">
+<button type="submit" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button></div>
+</div>
+</fieldset>
+</form>
+</div><!-- /content -->
+</div><!-- /page -->
+{% endblock %}

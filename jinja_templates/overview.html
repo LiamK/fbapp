@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<div data-role="page">
+<div data-role="header">
+<h1>Overview</h1>
+</div>
+<div data-role="content">
+<p>This is a Django web application running on a customized Amazon Web Services AMI.</p>
+<p>It's designed to demonstrate some of the capabilities of the AMI, which has been tailored for geospatial applications.<p>
+<p>It's a great starting point if you are creating a backend for a mobile web application that requires geospatial capabilities.</p>
+<p>You are free to copy the AMI and use it for your Geospatial projects!  It's all open source.
+<ul data-role="listview" data-inset="true" data-filter="false">
+	<li><a href="device.html">Device</a></li>
+	<li><a href="/world/">Location</a></li>
+	<li><a href="about.html">About</a></li>
+	<li><a href="get_it.html">Get the AMI</a></li>
+</ul>
+</div><!-- /content -->
+</div><!-- /page -->
+
+{% endblock %}
