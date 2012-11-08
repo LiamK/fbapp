@@ -23,8 +23,8 @@ GETTING THE AMI
 ---------------
 This application is really just a starting point for people using the AMI.
 To get the AMI id, just fill out the form in the application or send an
-email to gisdemo-AT-numenet-DOT-com.  It's free!  It's what we use at
-Numenet as a starting point for mobile web application backends.
+email to gisdemo-AT-numenet-DOT-com.  It's free!  It's what I use
+as a starting point for mobile web application backends.
 
 RUNNING DEMO
 ------------
