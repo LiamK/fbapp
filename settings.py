@@ -1,5 +1,6 @@
 # Django settings for demo project.
 import os
+#from registration_defaults.settings import *
 
 PROJECT_DIR = os.path.dirname(__file__)
 
@@ -7,8 +8,17 @@ PROJECT_DIR = os.path.dirname(__file__)
 TERAWURFL_HOST = 'localhost'
 TERAWURFL_PORT = '8800'
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+# Django-registration
+# One-week activation window
+ACCOUNT_ACTIVATION_DAYS = 7
+
+# django-facebook 
+FACEBOOK_API_KEY = '143691418659'
+FACEBOOK_APP_ID = '143691418659'
+FACEBOOK_APP_SECRET = 'c81f051f48feae7a3d472f13b1dbf2cf'
+
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 ADMINS = (
     ('Your Name', 'gisdemo@numenet.com'),
@@ -104,6 +114,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
     'demo.core.context_processors.device',
+    'django_facebook.context_processors.facebook',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,6 +129,12 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for the debugging toolbar
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'django_facebook.auth_backends.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+AUTH_PROFILE_MODULE = 'demo.UserProfile'
 
 ROOT_URLCONF = 'demo.urls'
 
@@ -148,8 +165,11 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'gunicorn',
     'demo.world',
+    'demo.demo',
     'debug_toolbar',
     'django_extensions',
+    'registration',
+    'django_facebook',
 )
 
 # A sample logging configuration. The only tangible logging
