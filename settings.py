@@ -10,6 +10,7 @@ TERAWURFL_PORT = '8800'
 FACEBOOK_REGISTRATION_BACKEND = 'registration.backends.default.DefaultBackend'
 
 PROJECT_DIR = os.path.dirname(__file__)
+PARENT_DIR = os.path.normpath(os.path.join(PROJECT_DIR, '..'))
 
 # Django-registration
 # One-week activation window
@@ -51,6 +52,12 @@ MEDIA_ROOT = ''
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = ''
 
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = os.path.join(PARENT_DIR, 'static')
+
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
@@ -60,7 +67,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    #os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(PROJECT_DIR, 'static'),
 )
 
 # List of finder classes that know how to find static files in
