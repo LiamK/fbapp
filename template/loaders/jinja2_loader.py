@@ -6,7 +6,7 @@ from django.utils.importlib import import_module
 from django.core import urlresolvers
 from django.conf import settings
 import jinja2
-from demo.template.loaders.jinja2_funcs import context_functions
+from template.loaders.jinja2_funcs import context_functions
 
 # This code is borrowed from django.template.loaders.app_directories
 # At compile time, cache the 'jinja_templates' directories to search.

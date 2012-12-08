@@ -31,6 +31,7 @@ def device(request):
     return device_dict
     
 def _get_wurfl_device(request):    
+    if settings.USE_TERAWURFL == False: return {}
     REQUEST_PARAMS = '|'.join(CAPABILITIES)
     try:
         user_agent = unicode(request.META['HTTP_USER_AGENT'])

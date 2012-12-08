@@ -2,40 +2,22 @@
 import os
 #from registration_defaults.settings import *
 
-PROJECT_DIR = os.path.dirname(__file__)
-
 # TeraWURFL is running locally on private port
+USE_TERAWURFL = False
 TERAWURFL_HOST = 'localhost'
 TERAWURFL_PORT = '8800'
+
+FACEBOOK_REGISTRATION_BACKEND = 'registration.backends.default.DefaultBackend'
+
+PROJECT_DIR = os.path.dirname(__file__)
 
 # Django-registration
 # One-week activation window
 ACCOUNT_ACTIVATION_DAYS = 7
 
-# django-facebook 
-FACEBOOK_API_KEY = '143691418659'
-FACEBOOK_APP_ID = '143691418659'
-FACEBOOK_APP_SECRET = 'c81f051f48feae7a3d472f13b1dbf2cf'
-
-DEBUG = True
-TEMPLATE_DEBUG = True
-
-ADMINS = (
-    ('Your Name', 'gisdemo@numenet.com'),
-)
+ADMINS = ()
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'geodjango',
-        'USER': 'django', 
-        'PASSWORD': 'ge0djang0',
-        'HOST': '',  # Set to empty string for localhost.
-        'PORT': '',  # Set to empty string for default.
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -69,12 +51,6 @@ MEDIA_ROOT = ''
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = ''
 
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/demo.numenet.com/static/'
-
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
@@ -84,7 +60,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_DIR, 'static'),
+    #os.path.join(PROJECT_DIR, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -95,26 +71,23 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'jv%he5x+)o+i*rqjy(v=c4ngyni^7d17ptpwr9v+&amp;*a0*f+xt@'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
    'django.template.loaders.filesystem.Loader',
    'django.template.loaders.app_directories.Loader',
-   'demo.template.loaders.jinja2_loader.Loader',
+   'template.loaders.jinja2_loader.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'django_facebook.context_processors.facebook',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
-    'demo.core.context_processors.device',
-    'django_facebook.context_processors.facebook',
+    'core.context_processors.device',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -134,12 +107,13 @@ AUTHENTICATION_BACKENDS = (
     'django_facebook.auth_backends.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
+
 AUTH_PROFILE_MODULE = 'demo.UserProfile'
 
-ROOT_URLCONF = 'demo.urls'
+ROOT_URLCONF = 'urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'demo.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -164,8 +138,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'gunicorn',
-    'demo.world',
-    'demo.demo',
+    'world',
+    'demo',
     'debug_toolbar',
     'django_extensions',
     'registration',
@@ -219,3 +193,4 @@ DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': hp_show_toolbar,
         }
 
+from local_settings import *
