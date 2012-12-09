@@ -1,0 +1,31 @@
+<form action="facebook.html" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+<div data-role="fieldcontain" class="ui-field-contain ui-hide-label ui-br">
+  <fieldset data-role="controlgroup" data-type="horizontal">
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" data-mini="true">
+            <option value="all">All</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+        </select>
+    
+        <label for="status" class="ui-hidden-accessible">Status</label>
+        <select name="status" class="select ui-select" data-mini="true" placeholder="Status">
+            <option value="Single">Single</option>
+            <option value="In a relationship">In a relationship</option>
+            <option value="Engaged">Engaged</option>
+            <option value="Married">Married</option>
+            <option value="It's complicated">It's complicated</option>
+            <option value="In an open relationship">In an open relationship</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Separated">Separated</option>
+            <option value="Divorced">Divorced</option>
+            <option value="In a civil union">In a civil union</option>
+            <option value="In a domestic partnership">In a domestic partnership</option>
+        </select>
+</fieldset>
+<div data-role="fieldcontain" class="ui-field-contain ui-hide-label ui-br">
+    <button type="submit" data-theme="a" name="submit" value="submit-value" class="ui-btn-hidden" data-mini="true" aria-disabled="false">Submit</button>
+</div>
+</div>
+</form>

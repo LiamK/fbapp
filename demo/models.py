@@ -12,6 +12,6 @@ class UserProfile(FacebookProfileModel):
 # Make sure we create a MyCustomProfile when creating a User
 def create_facebook_profile(sender, instance, created, **kwargs):
     if created:
-        MyCustomProfile.objects.create(user=instance)
+        UserProfile.objects.create(user=instance)
 
 post_save.connect(create_facebook_profile, sender=User)

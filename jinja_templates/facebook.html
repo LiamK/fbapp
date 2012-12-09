@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Facebook{% endblock %}
+{% block content %}
+<div data-role="page">
+<div data-role="content">
+<style>
+    div.friend img {
+        float:left;
+        margin:5px;
+    }
+    div.clear {
+        clear:both;
+    }
+</style>
+<div data-role="header">
+<a href="/overview.html" class="ui-btn-left" data-icon="arrow-l" data-rel="back">Back</a><h1>Facebook</h1>
+</div>
+<h3>Testing Facebook functionality...</h3>
+{% include "form.html" %}
+    {% for f in friends %}
+    {% include 'friend.html' %}
+    {% endfor %}
+{% if paging.next %}
+<a href="{{paging.next}}">Next</a>
+{% endif %} 
+</div><!-- /content -->
+</div><!-- /page -->
+{% endblock %}

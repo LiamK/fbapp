@@ -131,12 +131,13 @@ TEMPLATE_DIRS = (
 JINJA_TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'jinja_templates'),
 )
+DEFAULT_CONTENT_TYPE = 'text/html'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
@@ -147,6 +148,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'world',
     'demo',
+    'bff',
     'debug_toolbar',
     'django_extensions',
     'registration',

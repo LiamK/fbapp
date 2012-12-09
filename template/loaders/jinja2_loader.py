@@ -37,7 +37,9 @@ class Loader(BaseLoader):
     is_usable = True
 
     template_dirs = app_jinja_template_dirs + settings.JINJA_TEMPLATE_DIRS
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dirs))
+    env = jinja2.Environment(
+            loader=jinja2.FileSystemLoader(template_dirs),
+            )
     env.template_class = Template
 
     # These are available to all templates.

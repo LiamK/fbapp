@@ -4,6 +4,7 @@ from django.views.generic.simple import direct_to_template
 from django.contrib.auth.views import (password_reset, password_reset_done, password_change, password_change_done)
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from bff.views import friends
 
 
 # Uncomment the next two lines to enable the admin:
@@ -25,6 +26,7 @@ urlpatterns = patterns('',
 
     url(r'^$', direct_to_template, {'template':'overview.html'}),
     url(r'^about.html$', direct_to_template, {'template':'about.html'}),
+    url(r'^facebook.html$', friends),
     url(r'^get_it.html$', direct_to_template, {'template':'get_it.html'}),
     url(r'^overview.html$', direct_to_template, {'template':'overview.html'}),
     url(r'^details.html$', direct_to_template, {'template':'details.html'}),
